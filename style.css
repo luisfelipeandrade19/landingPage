@@ -1,0 +1,189 @@
+/* Criação de "Funções" para alteernancia de tema */
+:root{
+  --text-color: white;
+  --bg-color: url(./assets/bg-mobile.svg);
+  --stroke-color: rgba(255, 255, 255, 0.1);
+  --surface-color: rgba(255, 255, 255, 0.2);
+  --hightlight-color: rgba(255, 255, 255, 0.2);
+  --switch-bg-url: url(./assets/moon-stars.svg);
+}
+
+.light{
+  --text-color: black;
+  --bg-color: url(./assets/bg-mobile-light.svg);
+  --stroke-color: rgba(0, 0, 0, 0.1);
+  --surface-color: rgba(0, 0, 0, 0.1);
+  --hightlight-color: rgba(0, 0, 0, 0.2);
+  --switch-bg-url: url(./assets/sol.svg);
+}
+
+body {
+  /*
+  background-image: url(./assets/bg-mobile.svg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  */
+
+  /*
+  Abreviação do texto acima:
+  background: color img repeat position/size
+  */
+
+  background: var(--bg-color) no-repeat top center/cover;
+}
+
+/* Asteriscos é usado para mostrar que o o bloco de codigo se aplicara a todo os elementos de onde se aplica*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* Configurações a serem aplicadas a todo o body */
+body * {
+  font-family: 'JetBrains Mono', sans-serif;
+  color: var(--text-color);
+}
+
+/* Container = maior bloco de elementos ( todos os outros elementos vem dentro deste ) */
+#container {
+  width: 360px;
+  height: 712px;
+  /*border: 1px solid red;*/
+  margin: auto;
+  padding: 0 24px;
+  margin:  76px auto 32px;
+}
+/* Definições da propriedade Profile ( onde estão avatar e texto ) */
+#profile {
+  padding: 24px;
+  text-align: center;
+}
+
+/* Definições na propriedade Profile direcionadas a imagem */
+#profile img {
+  margin: auto;
+  width: 112px;
+  display: block;
+  margin-top: 24px;
+  /*border: 1px solid red;*/
+}
+
+/* Definições na propriedade Profile direcionadas ao parágrafo */
+#profile p {
+  font-weight: 500;
+  line-height: 14px;
+  margin-top: 8px;
+  /*border: 1px solid red;*/
+}
+
+/* Definições de botão de alterar tema */
+
+
+#switch{
+  position: relative;
+  width: 64px;
+  margin:4px auto;
+}
+
+#switch button{
+  width: 32px;
+  height: 32px;
+  background: white var(--switch-bg-url) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+  z-index: 1;
+  left: 0;
+}
+
+#switch span{
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  --webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+
+.light #switch button {
+  right: 0;
+  left: initial;
+}
+
+/* Definições para os botões/links */
+
+ul {
+   list-style: none;
+   flex-direction: column;
+   gap: 16px;
+   display: flex;
+   padding: 24px 0;
+   
+}
+
+ul li a{
+  /*border: 1px solid red;*/
+  justify-content: center;
+  align-items: center;
+  display: flex;
+
+  padding:  16px 24px;
+
+  background-color: var(--stroke-color);
+  border: 1px solid var(--surface-color);
+  border-radius: 50px;
+
+  -webkit-backdrop-filter: blur(4px);
+
+  text-decoration: none;
+  font-weight: 500;
+
+  transition: background 0.5s;
+}
+
+/* Definição para quando passar o mouse por cima da caixa */
+ul li a:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid var(--text-color);
+  font-weight: 1000;
+}
+
+/* Definições de Rotape ( Redes Sociais ) */
+#sociallinks {
+  display: flex;
+  justify-content: center;
+  padding: 24px 0;
+  font-size: 27px;
+  
+  
+}
+
+#sociallinks a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  border-radius: 50%;
+  transition: background 0.5s;
+  margin-top: -30px;
+}
+#sociallinks a:hover{
+  background: var(--hightlight-color);
+  padding: 16px;
+  
+}
+
+footer{
+  text-align: center;
+  font-size: 14px;
+  padding: 24px 0;
+  margin-top: 60px;
+}
+
