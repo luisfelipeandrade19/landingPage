@@ -31,6 +31,9 @@ body {
   */
 
   background: var(--bg-color) no-repeat top center/cover;
+
+  /* Fazendo com que background ocupe 100% da tela */
+  height: 100vh;
 }
 
 /* Asteriscos é usado para mostrar que o o bloco de codigo se aplicara a todo os elementos de onde se aplica*/
@@ -45,6 +48,7 @@ body {
 body * {
   font-family: 'JetBrains Mono', sans-serif;
   color: var(--text-color);
+  
 }
 
 /* Container = maior bloco de elementos ( todos os outros elementos vem dentro deste ) */
@@ -188,3 +192,12 @@ footer{
   margin-top: 60px;
 }
 
+/* media queries */
+@media(min-width: 700px){
+  :root{
+    --bg-color: url(./assets/bg-desktop.svg);
+  }
+  .light {
+    --bg-color: url(./assets/bg-desktop-light.svg);
+  }
+}
