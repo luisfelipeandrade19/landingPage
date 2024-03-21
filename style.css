@@ -105,6 +105,8 @@ body * {
   top: 50%;
   z-index: 1;
   left: 0;
+
+  animation: slide-out 0.4s ;
 }
 
 #switch span{
@@ -118,8 +120,11 @@ body * {
 }
 
 .light #switch button {
-  right: 0;
-  left: initial;
+  animation: slide-in 0.4s forwards;
+}
+
+#switch button:hover {
+outline: 8px solid var(--hightlight-color);
 }
 
 /* Definições para os botões/links */
@@ -199,5 +204,24 @@ footer{
   }
   .light {
     --bg-color: url(./assets/bg-desktop-light.svg);
+  }
+}
+
+/* animation */
+@keyframes slide-in{
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slide-out {
+  from{
+    left: 50%;
+  }
+  to {
+    left: 0;
   }
 }
