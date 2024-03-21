@@ -49,7 +49,8 @@ body * {
 
 /* Container = maior bloco de elementos ( todos os outros elementos vem dentro deste ) */
 #container {
-  width: 360px;
+  width: 100%;
+  max-width: 588px;
   height: 712px;
   /*border: 1px solid red;*/
   margin: auto;
